@@ -1,8 +1,8 @@
-package author.validation;
+package seeddesafiocdc.validation;
 
-import author.constant.AuthorConstant;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import seeddesafiocdc.author.constant.AuthorConstant;
 
 public class AuthorDescriptionValidator implements ConstraintValidator<AuthorDescriptionValidation, String> {
 

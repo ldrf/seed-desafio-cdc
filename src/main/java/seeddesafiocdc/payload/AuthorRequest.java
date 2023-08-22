@@ -1,8 +1,8 @@
-package author.payload;
+package seeddesafiocdc.payload;
 
-import author.validation.AuthorDescriptionValidation;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import seeddesafiocdc.validation.AuthorDescriptionValidation;
 
 public class AuthorRequest {
 	@NotEmpty(message = "The name can not be empty")

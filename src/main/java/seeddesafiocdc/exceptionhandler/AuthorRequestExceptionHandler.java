@@ -1,4 +1,4 @@
-package author.exceptionhandler;
+package seeddesafiocdc.exceptionhandler;
 
 import java.util.List;
 import java.util.stream.Collectors;
