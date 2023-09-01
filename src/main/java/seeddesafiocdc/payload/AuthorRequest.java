@@ -2,7 +2,8 @@ package seeddesafiocdc.payload;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
-import seeddesafiocdc.validation.AuthorDescriptionValidation;
+import jakarta.validation.constraints.Size;
+import seeddesafiocdc.model.Author;
 
 public class AuthorRequest {
 	@NotEmpty(message = "The name can not be empty")
@@ -11,7 +12,7 @@ public class AuthorRequest {
 	@Email(message = "The email is not valid")
 	private String email;
 	@NotEmpty(message = "The description can not be empty")
-	@AuthorDescriptionValidation
+	@Size(max = 400, message = "The field description exceeds a maximum of 400 characters")
 	private String description;
 
 	public String getName() {
@@ -49,6 +50,11 @@ public class AuthorRequest {
 		builder.append(description);
 		builder.append("]");
 		return builder.toString();
+	}
+
+	public Author toModel() {
+		Author author = new Author(name, email, description);
+		return author;
 	}
 
 }
