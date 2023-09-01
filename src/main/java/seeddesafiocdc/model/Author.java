@@ -7,19 +7,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import seeddesafiocdc.payload.AuthorRequest;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@NotBlank
 	private String name;
-
+	@NotBlank
+	@Email
 	private String email;
-
+	@NotBlank
+	@Size(max = 400)
 	private String description;
-
 	private LocalDateTime instance;
 
 	@Deprecated
@@ -27,10 +31,10 @@ public class Author {
 
 	}
 
-	public Author(final AuthorRequest request) {
-		name = request.getName();
-		email = request.getEmail();
-		description = request.getDescription();
+	public Author(final String name, final String email, final String description) {
+		this.name = name;
+		this.email = email;
+		this.description = description;
 		instance = LocalDateTime.now();
 	}
 
