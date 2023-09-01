@@ -15,6 +15,7 @@ import seeddesafiocdc.payload.AuthorRequest;
 
 @RestController
 @RequestMapping("/author")
+//Total de carga da classe = 2
 public class AuthorController {
 
 	private final EntityManager em;
@@ -25,8 +26,11 @@ public class AuthorController {
 
 	@PostMapping(value = "/create")
 	@Transactional
+	// 1
+	// total de carga do metodo = 2
 	public ResponseEntity<String> createAutor(@Valid @RequestBody final AuthorRequest authorRequest) {
-		Author author = new Author(authorRequest);
+		// 2
+		Author author = authorRequest.toModel();
 		em.persist(author);
 		return new ResponseEntity<>("Author is create", HttpStatus.CREATED);
 	}
