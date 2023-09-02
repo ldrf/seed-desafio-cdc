@@ -14,7 +14,7 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import seeddesafiocdc.model.Author;
 import seeddesafiocdc.payload.AuthorRequest;
-import seeddesafiocdc.validator.ForbidsDuplicateDuplicateAuthorMailValidator;
+import seeddesafiocdc.validator.ForbidsDuplicateAuthorMailValidator;
 
 @RestController
 @RequestMapping("/author")
@@ -22,10 +22,10 @@ import seeddesafiocdc.validator.ForbidsDuplicateDuplicateAuthorMailValidator;
 public class AuthorController {
 
 	private final EntityManager em;
-	private final ForbidsDuplicateDuplicateAuthorMailValidator forbidsDuplicateDuplicateAuthorMailValidator;
+	private final ForbidsDuplicateAuthorMailValidator forbidsDuplicateDuplicateAuthorMailValidator;
 
 	public AuthorController(final EntityManager em,
-			final ForbidsDuplicateDuplicateAuthorMailValidator forbidsDuplicateDuplicateAuthorMailValidator) {
+			final ForbidsDuplicateAuthorMailValidator forbidsDuplicateDuplicateAuthorMailValidator) {
 		this.em = em;
 		this.forbidsDuplicateDuplicateAuthorMailValidator = forbidsDuplicateDuplicateAuthorMailValidator;
 	}
