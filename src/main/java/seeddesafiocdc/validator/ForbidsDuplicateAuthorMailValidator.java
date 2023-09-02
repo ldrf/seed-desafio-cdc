@@ -11,11 +11,11 @@ import seeddesafiocdc.payload.AuthorRequest;
 import seeddesafiocdc.repository.AuthorRepository;
 
 @Component
-public class ForbidsDuplicateDuplicateAuthorMailValidator implements Validator {
+public class ForbidsDuplicateAuthorMailValidator implements Validator {
 
 	private final AuthorRepository authorRepository;
 
-	public ForbidsDuplicateDuplicateAuthorMailValidator(final AuthorRepository authorRepository) {
+	public ForbidsDuplicateAuthorMailValidator(final AuthorRepository authorRepository) {
 		this.authorRepository = authorRepository;
 	}
 
