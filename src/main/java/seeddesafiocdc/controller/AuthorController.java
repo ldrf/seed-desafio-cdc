@@ -16,16 +16,19 @@ import seeddesafiocdc.model.Author;
 import seeddesafiocdc.payload.AuthorRequest;
 import seeddesafiocdc.validator.ForbidsDuplicateAuthorMailValidator;
 
+
 @RestController
 @RequestMapping("/author")
 //Total de carga da classe = 3
 public class AuthorController {
 
 	private final EntityManager em;
+
 	private final ForbidsDuplicateAuthorMailValidator forbidsDuplicateDuplicateAuthorMailValidator;
 
 	public AuthorController(final EntityManager em,
 			final ForbidsDuplicateAuthorMailValidator forbidsDuplicateDuplicateAuthorMailValidator) {
+
 		this.em = em;
 		this.forbidsDuplicateDuplicateAuthorMailValidator = forbidsDuplicateDuplicateAuthorMailValidator;
 	}
